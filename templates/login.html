@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('styles', filename='index.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Login</h1>
+    <p>Digite seu usuário e senha.</p>
+
+    {% if erro%}
+    <p class="erro">{{ erro }}</p>
+    {% endif%}
+
+    <form method="POST">
+      <label for="usuario"></label>
+      <input id="usuario" name="usuario" type="text" required />
+
+      <label for="senha"></label>
+      <input id="senha" name="senha" type="password" required />
+
+      <button type="submit">Entrar</button>
+    </form>
+  </body>
+</html>
