@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f4f8;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+}
+
+.container {
+  width: min(92%, 680px);
+}
+
+.card {
+  background: white;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+button,
+.botao {
+  display: inline-block;
+  padding: 12px 18px;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover,
+.botao:hover {
+  opacity: 0.9;
+}
+
+.secundario {
+  background: #64748b;
+}
+
+.erro {
+  color: #b00020;
+  font-weight: bold;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+#video {
+  width: 100%;
+  margin-top: 18px;
+  min-height: 280px;
+  background: #111827;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.mensagem {
+  margin-top: 12px;
+  font-weight: bold;
+}

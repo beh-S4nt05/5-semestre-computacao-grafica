@@ -1,4 +1,5 @@
-'''IMPORTS'''
+"""IMPORTS"""
+
 import os
 from pathlib import Path
 
@@ -12,6 +13,7 @@ from flask import (
     url_for,
     send_from_directory,
 )
+from camera import camera_bp
 
 # Load environment variables from .env
 load_dotenv()
@@ -31,6 +33,8 @@ STYLES_FOLDER = BASE_DIR / "styles"
 USUARIO_CORRETO = os.getenv("APP_USER")
 SENHA_CORRETA = os.getenv("APP_PASSWORD")
 
+# Registra as rotas da câmera.
+app.register_blueprint(camera_bp)
 
 # Optional: show a clear error if the styles folder does not exist
 if not STYLES_FOLDER.is_dir():

@@ -10,8 +10,15 @@
     />
   </head>
   <body>
-    <h1>Bem vindo, {{usuario}}!</h1>
-    <p>A senha foi conferida pelo Python e o acesso foi autorizado.</p>
-    <a href="{{url_for('sair')}}">Sair</a>
-  </body>
+<main class="container card">
+
+<h1>Bem-vindo, {{ usuario }}!</h1>
+<p>A senha foi conferida pelo Python e o acesso foi autorizado.</p>
+<div class="acoes">
+<a class="botao" href="{{ url_for('camera.camera') }}">Abrir câmera</a>
+<a class="botao secundario" href="{{ url_for('sair') }}">Sair</a>
+</div>
+</main>
+</body>
+</html>
 </html>

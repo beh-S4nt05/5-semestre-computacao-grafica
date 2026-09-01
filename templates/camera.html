@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Câmera</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('styles', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <main class="container card camera-card">
+      <h1>Câmera no navegador</h1>
+      <p>
+        Olá, {{ usuario }}. Clique no botão abaixo e permita o acesso à câmera.
+      </p>
+      <video id="video" autoplay playsinline></video>
+      <p id="mensagem" class="mensagem">A câmera ainda não foi iniciada.</p>
+      <div class="acoes">
+        <button id="btnAbrir" type="button">Habilitar câmera</button>
+        <button id="btnFechar" type="button" class="secundario">
+          Desligar câmera
+        </button>
+        <a class="botao secundario" href="{{ url_for('bem_vindo') }}">Voltar</a>
+      </div>
+    </main>
+    <script>
+      const video = document.getElementById("video");
+      const mensagem = document.getElementById("mensagem");
+      const btnAbrir = document.getElementById("btnAbrir");
+      const btnFechar = document.getElementById("btnFechar");
+      let stream = null;
+      async function habilitarCamera() {
+        try {
+          stream = await navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: false,
+          });
+          video.srcObject = stream;
+          mensagem.textContent = "Câmera habilitada com sucesso.";
+        } catch (erro) {
+          mensagem.textContent =
+            "Não foi possível acessar a câmera. Verifique a permissão do navegador.";
+          console.error(erro);
+        }
+      }
+      function desligarCamera() {
+        if (stream) {
+          stream.getTracks().forEach((track) => track.stop());
+          video.srcObject = null;
+          stream = null;
+          mensagem.textContent = "Câmera desligada.";
+        }
+      }
+      btnAbrir.addEventListener("click", habilitarCamera);
+      btnFechar.addEventListener("click", desligarCamera);
+    </script>
+  </body>
+</html>
