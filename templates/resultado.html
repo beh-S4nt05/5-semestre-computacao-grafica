@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/style.css') }}"
+    />
+  </head>
+  <body>
+    <main class="container card resultado-card">
+      <h1>Resultado do processamento</h1>
+      <p>
+        Resolução: {{ largura }} × {{ altura }} pixels<br />
+        Canais da imagem colorida: {{ canais }}
+      </p>
+      <div class="grade-imagens">
+        <section>
+          <h2>Imagem original</h2>
+          <img src="{{ original }}" alt="Frame original capturado" />
+        </section>
+        <section>
+          <h2>Tons de cinza</h2>
+          <img src="{{ cinza }}" alt="Frame convertido para tons de cinza" />
+        </section>
+      </div>
+      <div class="acoes">
+        <a class="botao" href="{{ url_for('camera.camera') }}">
+          Capturar outro frame
+        </a>
+        <a class="botao secundario" href="{{ url_for('bem_vindo') }}">
+          Voltar
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

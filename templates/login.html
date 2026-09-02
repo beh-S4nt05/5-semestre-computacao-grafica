@@ -6,56 +6,27 @@
     <title>Login</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('styles', filename='index.css') }}"
+      href="{{ url_for('static', filename='styles/style.css') }}"
     />
   </head>
   <body>
-    <h1>Login</h1>
-    <p>Digite seu usuário e senha.</p>
+    <main class="container card">
+      <h1>Login</h1>
+      <p>Digite seu usuário e senha.</p>
 
-    {% if erro%}
-    <p class="erro">{{ erro }}</p>
-    {% endif%}
+      {% if erro%}
+      <p class="erro">{{ erro }}</p>
+      {% endif%}
 
-    <form method="POST">
-      <label for="usuario"></label>
-      <input id="usuario" name="usuario" type="text" required />
+      <form method="POST">
+        <label for="usuario"></label>
+        <input id="usuario" name="usuario" type="text" required />
 
-      <label for="senha"></label>
-      <input id="senha" name="senha" type="password" required />
+        <label for="senha"></label>
+        <input id="senha" name="senha" type="password" required />
 
-      <button type="submit">Entrar</button>
-    </form>
-  </body>
-</html>
-
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('styles', filename='index.css') }}"
-    />
-  </head>
-  <body>
-    <h1>Login</h1>
-    <p>Digite seu usuário e senha.</p>
-
-    {% if erro%}
-    <p class="erro">{{ erro }}</p>
-    {% endif%}
-
-    <form method="POST">
-      <label for="usuario"></label>
-      <input id="usuario" name="usuario" type="text" required />
-
-      <label for="senha"></label>
-      <input id="senha" name="senha" type="password" required />
-
-      <button type="submit">Entrar</button>
-    </form>
+        <button type="submit">Entrar</button>
+      </form>
+    </main>
   </body>
 </html>
