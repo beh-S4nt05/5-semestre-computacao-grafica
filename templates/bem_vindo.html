@@ -6,18 +6,18 @@
     <title>Bem-vindo</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('styles', filename='bem_vindo.css') }}"
+      href="{{ url_for('static', filename='styles/bem_vindo.css') }}"
     />
   </head>
   <body>
 <main class="container card">
 
-<h1>Bem-vindo, {{ usuario }}!</h1>
-<p>A senha foi conferida pelo Python e o acesso foi autorizado.</p>
-<div class="acoes">
-<a class="botao" href="{{ url_for('camera.camera') }}">Abrir câmera</a>
-<a class="botao secundario" href="{{ url_for('sair') }}">Sair</a>
-</div>
+  <h1>Bem-vindo, {{ usuario }}!</h1>
+  <p>A senha foi conferida pelo Python e o acesso foi autorizado.</p>
+    <div class="acoes">
+      <a class="botao" href="{{ url_for('camera.camera') }}">Abrir câmera</a>
+      <a class="botao secundario" href="{{ url_for('sair') }}">Sair</a>
+    </div>
 </main>
 </body>
 </html>
